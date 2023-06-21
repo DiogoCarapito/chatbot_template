@@ -1,0 +1,12 @@
+streamlit
+pandas
+python-dotenv
+
+supabase
+pinecone-client[grpc]==2.2.1
+
+dataclasses
+typing
+langchain
+
+
