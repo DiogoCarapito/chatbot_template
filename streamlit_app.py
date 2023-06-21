@@ -18,7 +18,7 @@ load_dotenv()
 
 # gradio api on hugging face
 CHATMGF_API = os.getenv('CHATMGF_API')
-
+OPENAI_API_KEY = os.envron.get("OPENAI_API_KEY")
 # Supabase configuration
 url: str = os.environ.get('SUPABASE_URL')
 key: str = os.environ.get('SUPABASE_KEY')
@@ -44,8 +44,8 @@ def initialize_session_state():
     if "conversation" not in st.session_state:
         llm = OpenAI(
             temperature=0,
-            openai_api_key=st.secrets["openai_api_key"],
-            model_name="gpt-3.5-turbo"
+            openai_api_key=OPENAI_API_KEY,
+            model_name="gpt-3.5-turbo",
         )
         st.session_state.conversation = ConversationChain(
             llm=llm,
